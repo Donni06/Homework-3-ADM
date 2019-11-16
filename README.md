@@ -23,7 +23,7 @@
 
 7. **utils.py:** a python file that gather functions you need in more than one of the previous files like (*collector, parser, etc.*)
 
-8. **main.py:** a python file that once executed build up the **Search engine_**.
+8. **main.py:** a python file that once executed build up the **_Search engine_**.
 
 9. **exercise_4.py:** python file that contains the implementation of the algorithm that solves problem 4.
 
