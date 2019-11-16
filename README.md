@@ -5,7 +5,7 @@
 * Lorenzo Loretucci
 * Luca Scofano 
 * Ulviyya Jafarli
-
+***
 ## Script descriptions
 
 1. **collector.py:** a python file that contains the line of code needed to collect your data from the html page (from which you get the urls) and Wikipedia
@@ -24,7 +24,7 @@
 
 8. **main.py:** a python file that once executed build up the search engine:
 
-⋅⋅⋅search_engine: a parameter that the user set to choose the search engine to run. According to the request of the homework, you can   get 1,2 or 3.⋅⋅
+8.1. **search_engine:** a parameter that the user set to choose the search engine to run. According to the request of the homework, you can   get 1,2 or 3.⋅⋅
 
 9. **exercise_4.py:** python file that contains the implementation of the algorithm that solves problem 4.
 
