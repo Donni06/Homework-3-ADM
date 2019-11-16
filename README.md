@@ -1,5 +1,6 @@
 # Homework 3 - What movie to watch tonight?
 ## Build a search engine over a list of movies that have a dedicated page on Wikipedia.
+***
 ### Group 20
 
 * Lorenzo Loretucci
@@ -22,7 +23,7 @@
 
 7. **utils.py:** a python file that gather functions you need in more than one of the previous files like (*collector, parser, etc.*)
 
-8. **main.py:** a python file that once executed build up the search engine:
+8. **main.py:** a python file that once executed build up the **Search engine_**.
 
 9. **exercise_4.py:** python file that contains the implementation of the algorithm that solves problem 4.
 
