@@ -9,7 +9,7 @@ import pandas as pd
 import os.path
 
 from tqdm import tqdm_notebook
-
+#Search Engine 1
 dir_path = r"C:\Users\loren\Downloads\HW3\TSVFile"
  
 # Step 1 concatenates various path components 
@@ -57,4 +57,37 @@ save_dict_to_file(inverted_index,"inverted_index")
 save_dict_to_file(vocabulary,"vocabulary")
 save_dict_to_file(documentlist,"documentlist")
 
+******************
+#Search Engine 2
+docpaths = r"C:\Users\loren\Downloads\HW3\TSVFile"
+# Step 1 open the previous files.
+vocabulary = open('vocabulary.txt', 'r', encoding = 'utf-8')
+vocabulary = eval(vocabulary.read()) 
+
+inverted_index = open('inverted_index.txt', 'r', encoding = 'utf-8') 
+inverted_index = eval(inverted_index.read())
+
+documentlist = open('documentlist.txt', 'r', encoding = 'utf-8')
+documentlist = eval(documentlist.read())
+
+#Step 2 create a new dictionary for the new inverted index
+new_inverted_index = {} 
+for key,doc in tqdm_notebook(documentlist.items()): #taking the keys (doc_i) and the values 
+    
+    for w in doc: # w = word in the document
+        score = tfidf(w,doc) #tf idf of the word in the doc
+        w_index = (key,score) # tuple of key (doc_i), and score (tf/idf)
+        if vocabulary[w] not in new_inverted_index: # if the id of the word is not in the new inv_idx
+            temp = [] #initializing empty list
+            temp.append(w_index) #appending the tuple
+            new_inverted_index[vocabulary[w]] = temp #giving to the newly created key (that is the id), the list just created [(doc_i, tf/idf), (doc_i+1, tf/idf)]
+        elif doc not in new_inverted_index[vocabulary[w]]: #if the doc is not already in that list: 
+            new_inverted_index[vocabulary[w]].append(w_index) #append to the list the new tuple
+
+# Step 3 removing duplicates
+for key in new_inverted_index:
+    new_inverted_index[key] = list(set(new_inverted_index[key]))
+    
+# Step 4 saving
+save_dict_to_file(new_inverted_index,"inverted_index_tfidf")
 
