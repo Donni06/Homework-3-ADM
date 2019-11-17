@@ -1,7 +1,7 @@
 #import used
 import os.path
 import csv
-from tqdm import tqdm_notebook #to see the running time
+from tqdm import tqdm_notebook #to see the running time.
 
 dir_path = r"C:\Users\loren\Downloads\HW3\Movie1" 
  
