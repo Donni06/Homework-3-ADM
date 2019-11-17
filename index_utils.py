@@ -1,6 +1,7 @@
 # Preprocessing libraries
 import pandas as pd
 
+#Search Engine 1
  #defining a function to save files right away
 def save_dict_to_file(dic, file): 
     f = open('{}.txt'.format(file), 'w',encoding="utf8") #open a new file in write mode (empty)
@@ -44,8 +45,31 @@ def information(data_frame):
             else :
                 infobox = str(df[column][0])
 
-            col.append(infobox.replace('\n',' '))
-
-    
+            col.append(infobox.replace('\n',' '))  
     
     return col, ''
+   
+ ******************  
+   #Search Engine 2
+def save_dict_to_file(dic, file): #defining a function to save files right away
+    f = open('{}.txt'.format(file), 'w',encoding="utf8") #open a new file in write mode (empty)
+    f.write(str(dic)) #write in it what we need (it will always be a dictionary, hence 'dic')
+    f.close() #closing it
+    
+    # Normalized value tf. 'Term frequency' divided by 'document length'. In this way the bias of having a long document doesn't count
+def tf(word, document):
+    return document.count(word) / len(document) 
+
+# Number of documents with the same word
+def document_frequency(word):
+    if word in vocabulary:
+        term_id = vocabulary[word]
+    return len(inverted_index[term_id])
+
+# IDF(word) = log(Total Number Of Documents / Number Of Documents containing the certain term (word))
+def idf(word):
+    return math.log(len(docpaths) / document_frequency(word))
+
+def tfidf(word, document):
+    return tf(word, document) * idf(word)
+ 
