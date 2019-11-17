@@ -84,7 +84,7 @@ query_tokens = [nltk.stem.PorterStemmer().stem(token) # Removing stopwords, spec
 
 search = int(input("Which search engine would you like to pick? \n1. Basic search engine \n2. Search engine with TD*IDF score \n3. Search engine with our own score:\n "))
 
-
+#Function for the first Search Engine 
 if search == 1:
     # Taking the term_ids of the query's terms (returns a list of terms_ids) from Vocabulary
     term_ids = [vocabulary[token] for token in query_tokens if token in vocabulary] 
@@ -111,7 +111,8 @@ if search == 1:
     printmd("The intitial query was: ***{}***".format(query))       
     pd.set_option('max_colwidth',500) #making the rows more readabale(bigger)
     display(search1.style.set_table_styles([ {'selector': '.row_heading, .blank', 'props': [('display', 'none;')]}]))
-    
+
+#Function for the second Search Engine
 elif search == 2:
     # Score for the query
     tfidf_query_array = [] 
@@ -168,6 +169,7 @@ elif search == 2:
     pd.set_option('max_colwidth',500)
     display(score_tdidf.style.background_gradient(cmap='Blues'))
 
+ #Function for the third Search Engine
 elif search == 3:
     
     # Select the language of the movie you would like to watch
