@@ -11,7 +11,7 @@
 
 1. **collector.py:** Python file that contains the line of code needed to collect data from the html page and Wikipedia
 
-2. **collector_utils.py:** Python file that stores the function used in *collector.py*.
+2. **collector_utils.py:** In our case we didn't use any functions
 
 3. **parser.py:** Python file that contains the line of code needed to parse the entire collection of html pages and save those in *tsv* files.
 
