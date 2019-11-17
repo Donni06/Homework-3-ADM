@@ -56,3 +56,5 @@ for i in tqdm_notebook(range (len(os.listdir(dir_path)))):
 save_dict_to_file(inverted_index,"inverted_index")
 save_dict_to_file(vocabulary,"vocabulary")
 save_dict_to_file(documentlist,"documentlist")
+
+
